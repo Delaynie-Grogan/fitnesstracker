@@ -15,18 +15,18 @@ students = {'Alex':[87,88,98],
 food = {'chicken':[90, 0, 60, 100, 0, 22]}
 #now define functions
 def viewnutrition():
-    print("hi")
+    print("Hi")
     for foods in food:
         calories = foods[food,0]
     print(str(calories))
-def enterGrades():
+def calorie_goal():
     nameToEnter = input('Student name: ')
-    gradeToEnter = input('Grade: ')
+    goals_met_today = input('Score: ')
 
     if nameToEnter in students:
-        print('Adding grade for'+nameToEnter)
-        students[nameToEnter].append(float(gradeToEnter)) #float will have a .0
-        print(str(nameToEnter)+' now has these grades:')
+        print('Adding score for'+nameToEnter)
+        students[nameToEnter].append(float(goals_met_today)) #float will have a .0
+        print(str(nameToEnter) + ' Did this well meeting their goal today:')
         print(students[nameToEnter])
     else:
         print('Student not found. Please check your spelling or go back and add if new.')
