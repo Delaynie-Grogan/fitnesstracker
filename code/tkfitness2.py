@@ -45,7 +45,7 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         
-        tk.Message(self, text="Please Login: ", font=('Courier', 16), justify="left", aspect=800).pack()
+        tk.Message(self, text="Enter Your Login: ", font=('Courier', 16), justify="left", aspect=800).pack()
 
         dialog_frame = tk.Frame(self)
         dialog_frame.pack(padx=300, pady=15, anchor='w')
@@ -63,7 +63,7 @@ class StartPage(tk.Frame):
     def get_user(self):
         return (self.name.get())
 
-    def click_cancel(self, event=None):
+    def click_cancel(self, event = None):
         print("The user clicked 'Cancel'")
         print(self.name.get())
 
@@ -76,9 +76,9 @@ class PageOne(tk.Frame):
         self.controller = controller
         self.sp = StartPage
 
-        label = tk.Label(self, text="Welcome to your Nutrition App!", font=controller.title_font)
+        label = tk.Label(self, text="Welcome to Confined Calories!", font=controller.title_font)
         label.pack(side="top", fill="x", pady=10)
-        label2 = tk.Label(self, text="What would you like to do?" ,font=('Courier', 12))
+        label2 = tk.Label(self, text="What would you like to do today?" ,font=('Courier', 12))
         label2.pack()
         viewbutton = tk.Button(self, height=5,text='View Your Daily Nutrition Info', command=lambda: controller.show_frame("PageTwo"))
         viewbutton.pack()
