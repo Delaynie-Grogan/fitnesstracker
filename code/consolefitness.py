@@ -1,4 +1,5 @@
 '''
+This is where users will track their progress or how well they met their daily goals after logging calories input.
 grade tracking program - think through the goal up front- what is the task and design?
 needs to enable several basic functions for teachers
 needs to have login to protect the student data
