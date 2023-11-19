@@ -1,8 +1,5 @@
 '''
 This is where users will track their progress or how well they met their daily goals after logging calories input.
-grade tracking program - think through the goal up front- what is the task and design?
-needs to enable several basic functions for teachers
-needs to have login to protect the student data
 '''
 #import libraries first
 import statistics as s
@@ -15,46 +12,46 @@ students = {'Alex':[87,88,98],
             'Nboke':[90,88,78]}
 food = {'chicken':[90, 0, 60, 100, 0, 22]}
 #now define functions
-def viewnutrition():
+def view_nutrition():
     print("Hi")
     for foods in food:
         calories = foods[food,0]
     print(str(calories))
 def calorie_goal():
-    nameToEnter = input('Student name: ')
+    name_user = input('User name: ')
     goals_met_today = input('Score: ')
 
-    if nameToEnter in students:
-        print('Adding score for'+nameToEnter)
-        students[nameToEnter].append(float(goals_met_today)) #float will have a .0
-        print(str(nameToEnter) + ' Did this well meeting their goal today:')
-        print(students[nameToEnter])
+    if name_user in users:
+        print('Adding score for'+ name_user)
+        users[name_user].append(float(goals_met_today)) #float will have a .0
+        print(str(name_user) + ' Did this well meeting their goal today:')
+        print(users[name_user])
     else:
-        print('Student not found. Please check your spelling or go back and add if new.')
+        print('User not found. Please check your spelling or go back and add if new.')
 
-def removeStudent():
-    nameToRemove = input('Who do you want to remove? ')
-    if nameToRemove in students:
-        print('Removing '+nameToRemove)
-        del students[nameToRemove]
-        print(students)
+def remove_users():
+    name_remove = input('Who do you want to remove? ')
+    if name_remove in users:
+        print('Removing '+ name_remove)
+        del users[name_remove]
+        print(users)
     else:
-        print('Student not found.')
+        print('User not found.')
 
-def averageStudents():
-    for student in students:
-        grades = students[student]
-        average = s.mean(grades)
-        print(student,' average ',average)
+def average_users():
+    for user in users:
+        scores = users[user]
+        average = s.mean(scores)
+        print(user,' Your Scores is ',average)
 
 def main():
     print("User: " + login)
     print("""
-    Welcome to the Grade Tracker
+    Welcome to the Calorie Count
 
-    [1] - Enter Grades
-    [2] - Remove Student
-    [3] - Student Averages
+    [1] - Enter Scores
+    [2] - Remove User
+    [3] - User Scores
     [4] - Exit
     [5] - View Nutrition Info
     """)
@@ -83,7 +80,7 @@ password = input('Password: ')
 
 if login in admins:
     if admins[login] == password:
-        print('Welcome,',login)
+        print('Welcome to Confined Calories,',login)
         #now run the code
         while True:
             main()
